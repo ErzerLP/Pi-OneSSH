@@ -1,0 +1,43 @@
+{
+  "name": "pi-onessh",
+  "version": "0.1.0",
+  "description": "Optimized OneSSH MCP tools for Pi with static schemas and lazy transport",
+  "type": "module",
+  "files": [
+    "extensions"
+  ],
+  "license": "GPL-3.0-only",
+  "keywords": [
+    "pi-package",
+    "pi-extension",
+    "onessh",
+    "ssh",
+    "remote-development"
+  ],
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test test/*.test.ts",
+    "check": "npm run typecheck && npm run test"
+  },
+  "pi": {
+    "extensions": [
+      "./extensions/onessh/index.ts"
+    ]
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-ai": "*",
+    "@earendil-works/pi-coding-agent": "*",
+    "typebox": "*"
+  },
+  "devDependencies": {
+    "@earendil-works/pi-ai": "^0.84.1",
+    "@earendil-works/pi-coding-agent": "^0.84.1",
+    "@types/node": "^24.12.0",
+    "typebox": "^1.3.7",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  }
+}
